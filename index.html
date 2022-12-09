@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:ital,wght@0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:wght@300;400;700&family=Roboto:ital,wght@0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Game Store Development</title>
+</head>
+
+<body>
+    <header class="header">
+    </header>
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-4">
+                <div class="card my-4">
+                    <img class="header-image" src="images/Witcher3.jpeg" alt="Whole Foods Market">
+                </div>
+            </div>
+
+            <h1 class="my-3">Game Store Development</h1>
+        </div>
+
+        <h2 class="my-4">Link to Deployed Website</h2>
+            <a href="https://sleepycat678.github.io/1300-Development/">https://sleepycat678.github.io/1300-Development/</a>
+
+
+        <!-- <h2 class="my-4">Screenshot</h2>
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8">
+                <div class="card my-4 ">
+                    <img class="Screenshot" src="images/storyboard.png" alt="Screenshot">
+                </div>
+            </div>
+        </div> -->
+
+        <h2 class="my-4">Goal and Value of the Application</h2>
+            <p>The goal of this application is to build a online game store where users can sort games by IGN rating or by price and they can also filter games based on the developers and game genre. Users can easily add games to the shopping cart and increase/decrease the number or delete the game from the cart.</p>
+
+
+        <h2 class="my-4">Usability Principles Considered</h2>
+            <ol class="my-4">
+                <li>The layout is simple and comprehensible at first sight. The application is on one page with three basic parts: the filter is on the left, the game list is in the middle, the shopping cart is on the right side.</li>
+                <li>The filters and the buttons of the application are intuitive and provide quick feedback so that the users can easily learn how to use them.</li>
+                <li>The application allows users to reset filters and empty cart so they can easily revert to the beginning.</li>
+            </ol>
+
+        <h2 class="my-4">Organization of Components</h2>
+            <ol class="my-4">
+                <li>App is the main component, it contains all the other components: Filters, GameItem, Cart.</li>
+                <li>Filters is the component that represents the filters on the left. It contains three RadioGroup(imported from MUI): "Sort By", "Genre", "Developer".</li>
+                <li>GameItem is the component which displays the information (image, name, rating, genre, price, developer) and wraps them in a box. The application uses GameItem to build the game list in the middle of the page.</li>
+                <li>Cart is the component that represents the shopping cart on the right which displays the games, quantities and price in the cart. The users can also modify the quantity of the game or choose to delete the game from the cart.</li>
+            </ol>
+
+        <h2 class="my-4">How Data is Passed Down Through Components</h2>
+            <ol class="my-4">
+                <li>game-data.json file contains the specific data for the games and is imported as gameData in App . App initializes states: sort, genre, developer, cart. No prop is passed in App.</li>
+                <li>sort, setSort, genre, setGenre, developer, setDeveloper are passed to Filters. I use set functions to change the values based on e.target.value . There is a resetFilters for resetting the filters to default setting.</li>
+                <li>game information and addToCart are passed to GameItem which displays the information. addToCart is used to add the item.name and item.price to the cart.</li>
+                <li>cart, setCart, addToCart are passed to Cart. setCart is used to resertCart, removeItem, reduceItemQuantity. addToCart is used to increase the quantity of the item in cart.</li>
+            </ol>
+
+        <h2 class="my-4">How the User Triggers State Changes</h2>
+            <p>The users can trigger state changes in many ways:</p>
+            <ol class="my-4">
+                <li>The users can trigger state changes by clicking a radio button, which changes the state of sort, genre, or developer.</li>
+                <li>The users can trigger state changes by clicking "Reset Filters" or "Empty Cart" button, which resets the states to default setting.</li>
+                <li>The users can trigger state changes by clicking "Add to Cart" button, which adds the item.name and item.price to the cart.</li>
+                <li>The users can trigger state changes by clicking increase, decrease, or delete item button in the cart, which change the item.name and item.quantity of the cart state</li>
+            </ol>
+
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <h4>csci 1300</h4>
+        </div>
+    </div>
+</body>
+    
+</html>
